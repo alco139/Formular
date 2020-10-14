@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="sk">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Formulár</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+      <header>
+          <h1 class="text-center text-white mt-3">Vyplň formulár</h1>
+      </header>
+    <div class="container">
+      <div class="row formDiv">
+        <div class="col-md-3 mt-4"></div>
+        <div class="col-md-6 mt-4  ">
+            <form action="mailto:alco139@gmail.com" method="POST">
+                
+                <div class="form-group">
+                  <label for="name">Meno *</label>
+                  <input type="text" class="form-control" id="name" onkeyup="nameValidation()" placeholder="Meno">
+                  <p id="nameHelp"></p>
+                </div>
+
+                <div class="form-group">
+                  <label for="surname">Priezvisko *</label>
+                  <input type="text" class="form-control" id="surname" placeholder="Priezvisko">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" class="form-control" id="email" placeholder="xxx@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Vek *</label>
+                    <input type="number" class="form-control" id="age">
+                </div>
+
+                <div class="form-group">
+                    <label for="birthDate">Dátum narodenia *</label>
+                    <input type="date" class="form-control" id="birthDate">
+                </div>
+
+                <div class="form-check">
+                  <p>Vlastníte smartfón?</p>
+                  <div class="radio">
+                    <label><input type="radio" id="yesCheck" name="smartphone" value="Yes" onmouseup="checkYes()">Áno</label>
+                  </div>
+                  <div class="radio">
+                    <label><input type="radio" id="noCheck" name="smartphone" value="No" onmouseup="checkNo()">Nie</label>
+                  </div>
+                </div>
+
+                <div id="checkShow">
+                    <p>Ktorý smartfón by ste chceli vlastniť?</p>
+
+                    
+                </div>
+
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+        <div class="col-md-3 mt-4 "></div>
+      </div>
+    </div>
+  </body>
+</html>

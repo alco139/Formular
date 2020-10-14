@@ -1,0 +1,16 @@
+.background{
+    background-color: #c51162;
+    
+}
+body{
+    background-color: #880e4f;
+}
+.formDiv{
+    margin-top: 60px;
+    border-radius: 25px;
+    background-color: white;
+    color: #880e4f;
+}
+#checkShow{
+    display: none;
+}
