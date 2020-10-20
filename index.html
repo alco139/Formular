@@ -19,52 +19,128 @@
       <div class="row formDiv">
         <div class="col-md-3 mt-4"></div>
         <div class="col-md-6 mt-4  ">
-            <form action="mailto:alco139@gmail.com" method="POST">
-                
+            <form action="mailto:feistu03@gmail.com" method="POST" enctype="text/plain" >
+              
+              <div class="form-group">          
+                <input type="text" name="myName" id="myName" class="form-control" value="Alan Dolán">
+              </div>
+
                 <div class="form-group">
                   <label for="name">Meno *</label>
-                  <input type="text" class="form-control" id="name" onkeyup="nameValidation()" placeholder="Meno">
+                  <input type="text" name="name" class="form-control" id="name" onblur="nameValidation()" placeholder="Meno" required>
                   <p id="nameHelp"></p>
                 </div>
 
                 <div class="form-group">
                   <label for="surname">Priezvisko *</label>
-                  <input type="text" class="form-control" id="surname" placeholder="Priezvisko">
+                  <input type="text" name="surname" class="form-control" id="surname" onblur="surnameValidation()" placeholder="Priezvisko" required>
+                  <p id="surHelp"></p>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email *</label>
-                    <input type="email" class="form-control" id="email" placeholder="xxx@example.com">
+                    <input type="email" name="email" pattern="^[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,4}|[.]{1}[a-zA-Z]{2,4}[.]{1}[a-zA-Z]{2,4})$" class="form-control" id="email" onchange="emailValidation()" placeholder="xxx@example.com" required>
+                    <p id="emailHelp"></p>
                 </div>
 
                 <div class="form-group">
                     <label for="age">Vek *</label>
-                    <input type="number" class="form-control" id="age">
+                    <input type="number" name="age" class="form-control" id="age" onchange="ageValidation()" required>
+                    <p id="ageHelp"></p>
                 </div>
 
                 <div class="form-group">
                     <label for="birthDate">Dátum narodenia *</label>
-                    <input type="date" class="form-control" id="birthDate">
+                    <input type="date" name="birthDate" class="form-control" id="birthDate" onchange="ageValidation()" required>
                 </div>
 
                 <div class="form-check">
-                  <p>Vlastníte smartfón?</p>
+                  <p>Aký je váš obľúbeny predmet?</p>                 
+                  <label><input type="checkbox" id="math" name="math" value="yes">Matematika</label>                                                                     
+                </div>
+
+                <div class="form-check">
+                  <label><input type="checkbox" id="prog" name="prog" value="yes">Programovanie</label>  
+                </div>
+
+                <div class="form-check">
+                  <label><input type="checkbox" id="web" name="web" value="yes">Webové technológie</label> 
+                </div>
+
+                <div class="form-check">
+                  <label><input type="checkbox" id="other" onclick="checkOther()">Iné</label> 
+                </div>
+
+                <div class="form-group">
+                  <textarea id="otherSubjects" name="otherSubjects" rows="4" cols="40"></textarea>
+                </div>
+
+                <div class="form-check">
+                  <p>Máš obľúbené jedlo?</p>
                   <div class="radio">
-                    <label><input type="radio" id="yesCheck" name="smartphone" value="Yes" onmouseup="checkYes()">Áno</label>
+                    <label><input type="radio" id="yesCheck" name="favoritefood" value="Yes" onmouseup="checkYes()">Áno</label>
                   </div>
                   <div class="radio">
-                    <label><input type="radio" id="noCheck" name="smartphone" value="No" onmouseup="checkNo()">Nie</label>
+                    <label><input type="radio" id="noCheck" name="favoritefood" value="No" onmouseup="checkNo()">Nie</label>
                   </div>
+                </div>
+
+                <div class="form-check" id="favFood">
+                  <p>Napíš obľubené jedlo</p>  
+                  <textarea name="favFood" rows="2" cols="40"></textarea>
                 </div>
 
                 <div id="checkShow">
                     <p>Ktorý smartfón by ste chceli vlastniť?</p>
+                      <select class="form-control selcls" name="brand" id="brand" onmouseup="chooseBrand()">
+                        <option value="" disabled selected>Vyberte možnosť</option>
+                        <option value="apple">Apple</option>
+                        <option value="samsung">Samsung</option>
+                      </select>
+                 
+                        <p>Aký typ?</p>
+                        <select class="form-control selcls" name="model" id="apple" onchange="chooseIphone()">
+                          <option value="" disabled selected>Vyberte možnosť</option>
+                          <option value="iphone">Iphone</option>
+                          <option value="iphonePro">Iphone Pro</option>
+                        </select>
 
+                        <select class="form-control selcls" name="model" id="samsung" onmouseup="chooseSamsung()">
+                          <option value="" disabled selected>Vyberte možnosť</option>
+                          <option value="s-class">S class</option>
+                          <option value="note">Note</option>
+                        </select>
+ 
+                
                     
+                        <p>Model:</p>
+                        <select class="form-control selcls" name="type" id="iphone" >
+                          <option value="" disabled selected>Vyberte možnosť</option>
+                          <option value="iphone10">Iphone X</option>
+                          <option value="iphone11">Iphone 11</option>
+                          <option value="iphone12">Iphone 12</option>
+                        </select>
+
+                        <select class="form-control selcls" name="type" id="iphonePro">
+                          <option value="" disabled selected>Vyberte možnosť</option>
+                          <option value="iphonePro11">Iphone 11 Pro</option>
+                          <option value="iphonePro12">Iphone 12 Pro</option>  
+                        </select>
+                    
+                        <select class="form-control selcls" name="type" id="s-class">
+                          <option value="" disabled selected>Vyberte možnosť</option>
+                          <option value="s10">Samsung galaxy S10</option>
+                          <option value="s20">Samsung galaxy S20</option>
+                        </select>
+
+                        <select class="form-control selcls" name="type" id="note">
+                          <option value="" disabled selected>Vyberte možnosť</option>
+                          <option value="note10">Samsung galaxy note S10</option>
+                          <option value="note20">Samsung galaxy note S20</option>
+                        </select>
+                                                           
                 </div>
-
-
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button id="button" type="submit" class="btn btn-dark">Odoslať</button>
               </form>
         </div>
         <div class="col-md-3 mt-4 "></div>
